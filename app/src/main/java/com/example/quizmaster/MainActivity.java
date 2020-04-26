@@ -24,28 +24,29 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         getSupportActionBar().hide();
-        Button quizMakerButton = findViewById(R.id.NewQuizButton);
-        quizMakerButton.setVisibility(View.VISIBLE);
-        Log.i("Yogurt", "Hey There!");
-        quizMakerButton.setOnClickListener((unused -> {
-            Intent intent = new Intent(this, QuizMakerActivity.class);
-            startActivity(intent);
-        }));
-        quizMakerButton.setOnClickListener((unused -> {
-            Intent intent = new Intent(this, OldQuizActivity.class);
-            startActivity(intent);
-        }));
-        quizMakerButton.setOnClickListener((unused -> {
-            Intent intent = new Intent(this, SharedQuizActivity.class);
-            startActivity(intent);
-        }));
+        Log.i("Standard", "*** This is a test for you ***");
+        displayButtons();
     }
 
-    public void detectSentence() {}
+   private void displayButtons() {
+       Button quizMakerButton = findViewById(R.id.NewQuizButton);
+       quizMakerButton.setVisibility(View.VISIBLE);
+       quizMakerButton.setOnClickListener((unused -> {
+           Intent intent = new Intent(this, QuizMakerActivity.class);
+           startActivity(intent);
+       }));
+       Button localQuizButton = findViewById(R.id.LocalQuizButton);
+       localQuizButton.setVisibility(View.VISIBLE);
+       localQuizButton.setOnClickListener((unused -> {
+           Intent intent = new Intent(this, OldQuizActivity.class);
+           startActivity(intent);
+       }));
+       Button onlineQuizButton = findViewById(R.id.OnlineQuizButton);
+       onlineQuizButton.setVisibility(View.VISIBLE);
+       onlineQuizButton.setOnClickListener((unused -> {
+           Intent intent = new Intent(this, SharedQuizActivity.class);
+           startActivity(intent);
+       }));
+   }
 
-    // CREATE YOUR OWN QUIZ OPTION
-
-    // OLD QUIZZES OPTION
-
-    // YOUR QUIZZES OPTION
 }

@@ -4,7 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.PopupMenu;
@@ -27,11 +30,6 @@ public class QuestionMakerActivity extends AppCompatActivity {
             intent.putExtra("FormInput", input);
             finish();
         }));
+        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
-    /**
-    private void showPopup (View v) {
-        PopupMenu menu = new PopupMenu(this, v);
-        MenuInflater inflater = menu.getMenuInflater();
-        inflater.inflate
-    } */
 }

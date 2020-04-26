@@ -27,10 +27,12 @@ import opennlp.tools.util.Span;
 public class SentenceAnalyzer {
     private String input;
     private String[] sentences;
+    private Span[] chunkSentences;
     public SentenceAnalyzer(final String s) {
         input = s;
         try {
             sentences = detectSentence();
+            chunkSentences = chunkSentences();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -41,7 +43,7 @@ public class SentenceAnalyzer {
      * @return An array of strings (each string is an individual word)
      * @throws IOException - in case the model file is not found
      */
-    public String[] detectSentence() throws IOException {
+    private String[] detectSentence() throws IOException {
         InputStream stream = new FileInputStream("en-token.bin");
         TokenizerModel model = new TokenizerModel(stream);
         TokenizerME tokenizer = new TokenizerME(model);
@@ -50,15 +52,15 @@ public class SentenceAnalyzer {
     }
 
     /**
-     * Uses a pre-made model to detect a pronoun associated with a person's name
+     * Uses a pre-made model to detect a pronoun associated with a person's name (Probably won't use)
      * @return An array of Span, which includes an inclusive and exclusive inner and outer bound
      * @throws IOException - in case the model file is not found
      */
-    public Span[] detectPerson() throws IOException {
+    private Span[] detectPerson() throws IOException {
         InputStream stream = new FileInputStream("en-ner-person.bin");
         TokenNameFinderModel tFinder = new TokenNameFinderModel(stream);
         NameFinderME nFinder = new NameFinderME(tFinder);
-        Span[] spans = nFinder.find(this.detectSentence());
+        Span[] spans = nFinder.find(this.sentences);
         return spans;
     }
 
@@ -67,11 +69,11 @@ public class SentenceAnalyzer {
      * @return An array of word's part-of-speech values (e.g. noun, adjective, verb)
      * @throws IOException - in case the model file is not found
      */
-    public String[] partOfSpeechTags() throws IOException {
+    private String[] partOfSpeechTags() throws IOException {
         InputStream stream = new FileInputStream("en-pos-perceptron.bin");
         POSModel model = new POSModel(stream);
         POSTaggerME tagger = new POSTaggerME(model);
-        String[] tags = tagger.tag(detectSentence());
+        String[] tags = tagger.tag(this.sentences);
         return fixUnmarkedTags(tags);
     }
 
@@ -80,11 +82,11 @@ public class SentenceAnalyzer {
      * @return An array of Span, which includes an inclusive and exclusive inner and outer bound
      * @throws IOException - in case the model file is not found
      */
-    public Span[] chunkSentences() throws IOException {
+    private Span[] chunkSentences() throws IOException {
         InputStream stream = new FileInputStream("en-chunker.bin");
         ChunkerModel model = new ChunkerModel(stream);
         ChunkerME chunker = new ChunkerME(model);
-        Span[] spans = chunker.chunkAsSpans(detectSentence(), partOfSpeechTags());
+        Span[] spans = chunker.chunkAsSpans(this.sentences, partOfSpeechTags());
         return spans;
     }
 
@@ -94,7 +96,7 @@ public class SentenceAnalyzer {
      * @return A Linked List of Strings
      * @throws IOException - in case the model file is not found
      */
-    public List<String> getTrueMeanings() throws IOException {
+    private List<String> getTrueMeanings() throws IOException {
         InputStream stream = new FileInputStream("en-lemmatizer.dict");
         DictionaryLemmatizer lem = new DictionaryLemmatizer(stream);
         List<String> lemmas = new LinkedList<>(Arrays.asList(lem.lemmatize(detectSentence(), partOfSpeechTags())));
@@ -117,8 +119,8 @@ public class SentenceAnalyzer {
         SentenceAnalyzer analyzer = (SentenceAnalyzer) o;
         try {
             return analyzer.getTrueMeanings().equals(this.getTrueMeanings());
-        } catch (IOException exception) {
-            System.out.println("IOException found: " + exception);
+        } catch (IOException e) {
+            e.printStackTrace();
             return false;
         }
         // Idea : create a model that analyzes the similarity between answers
@@ -146,16 +148,11 @@ public class SentenceAnalyzer {
      * @return a question
      */
     public String generateQuestion(final String[] sentence) {
-        try {
-            Span[] spans = this.chunkSentences();
-            int endIndex = findEndOfPhrase(spans, 0);
-            return concatStrings(sentence, 0, endIndex)
-                    + findRemainingPhrase(endIndex)
-                    + "?";
-        } catch (IOException exception) {
-            System.out.println(exception);
-            return "ERROR IN GENERATING QUESTION";
-        }
+        Span[] spans = this.chunkSentences;
+        int endIndex = findEndOfPhrase(spans, 0);
+        return concatStrings(sentence, 0, endIndex)
+                + findRemainingPhrase(endIndex)
+                + "?";
     }
 
     /**
@@ -165,14 +162,14 @@ public class SentenceAnalyzer {
      */
     private String findRemainingPhrase(int index) {
         try {
-            String[] sentence = detectSentence();
+            String[] sentence = this.sentences;
             String[] tags = partOfSpeechTags();
             String remainingPhrase = "";
             int acc = index;
             while (tags[acc].equals("TO") || tags[acc].equals("DT") || tags[acc].equals("PRP")) {
                 remainingPhrase = remainingPhrase + " " + sentence[acc];
                 if (acc >= sentence.length) {
-                    return "FAILURE FAILURE FAILURE";
+                    return null;
                 }
                 acc++;
             }
