@@ -28,9 +28,15 @@ public class MainActivity extends AppCompatActivity {
         quizMakerButton.setVisibility(View.VISIBLE);
         Log.i("Yogurt", "Hey There!");
         quizMakerButton.setOnClickListener((unused -> {
-            // What does BaseContext do?
-            detectSentence();
             Intent intent = new Intent(this, QuizMakerActivity.class);
+            startActivity(intent);
+        }));
+        quizMakerButton.setOnClickListener((unused -> {
+            Intent intent = new Intent(this, OldQuizActivity.class);
+            startActivity(intent);
+        }));
+        quizMakerButton.setOnClickListener((unused -> {
+            Intent intent = new Intent(this, SharedQuizActivity.class);
             startActivity(intent);
         }));
     }

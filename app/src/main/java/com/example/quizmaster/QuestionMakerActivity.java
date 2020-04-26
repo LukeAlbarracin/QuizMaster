@@ -4,8 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.PopupMenu;
 import android.widget.TextView;
 
 import com.google.android.material.textfield.TextInputLayout;
@@ -22,7 +24,14 @@ public class QuestionMakerActivity extends AppCompatActivity {
         confirm.setOnClickListener((unused -> {
             CharSequence input = text.getEditText().getText().toString();
             Intent intent = new Intent(getApplicationContext(), QuizMakerActivity.class);
+            intent.putExtra("FormInput", input);
             finish();
         }));
     }
+    /**
+    private void showPopup (View v) {
+        PopupMenu menu = new PopupMenu(this, v);
+        MenuInflater inflater = menu.getMenuInflater();
+        inflater.inflate
+    } */
 }
