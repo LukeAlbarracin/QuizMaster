@@ -15,7 +15,7 @@ import android.widget.TextView;
 
 import com.google.android.material.textfield.TextInputLayout;
 
-public class QuestionMakerActivity extends AppCompatActivity {
+public class BasicQuestionActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +28,7 @@ public class QuestionMakerActivity extends AppCompatActivity {
             CharSequence input = text.getEditText().getText().toString();
             Intent intent = new Intent(getApplicationContext(), QuizMakerActivity.class);
             intent.putExtra("FormInput", input);
+            startActivity(intent);
             finish();
         }));
         //getSupportActionBar().setDisplayHomeAsUpEnabled(true);

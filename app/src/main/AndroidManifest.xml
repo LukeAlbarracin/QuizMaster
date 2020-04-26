@@ -9,16 +9,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".BulletpointActivity"></activity>
+        <activity android:name=".MathQuestionActivity" />
         <activity
             android:name=".SharedQuizActivity"
             android:label="@string/title_activity_shared_quiz"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".OldQuizActivity" />
-        <activity android:name=".QuestionMakerActivity" />
+        <activity android:name=".BasicQuestionActivity" />
         <activity
             android:name=".QuizMakerActivity"
             android:label="@string/title_activity_quiz_maker"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

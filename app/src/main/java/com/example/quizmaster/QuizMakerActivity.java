@@ -9,10 +9,11 @@ import com.google.android.material.snackbar.Snackbar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import android.view.Menu;
+import android.util.Log;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ActionMenuView;
 import android.widget.PopupMenu;
 import android.widget.TextView;
 
@@ -24,17 +25,17 @@ public class QuizMakerActivity extends AppCompatActivity {
         setContentView(R.layout.activity_quiz_maker);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.AddQuestionButton);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
-                displayPopup(view);
-                startActivity(new Intent(getApplicationContext(), QuestionMakerActivity.class));
+                displayPopup(getCurrentFocus());
             }
         });
     }
+
     @Override
     protected void onRestart() {
         super.onRestart();
@@ -44,25 +45,43 @@ public class QuizMakerActivity extends AppCompatActivity {
     }
 
     public void displayPopup (View v) {
-        PopupMenu popup = new PopupMenu(this, getCurrentFocus());
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.AddQuestionButton);
+        PopupMenu popup = new PopupMenu(this, fab);
         MenuInflater inflater = popup.getMenuInflater();
         inflater.inflate(R.menu.question_type_menu, popup.getMenu());
+        popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                return itemSelected(item);
+            }
+        });
         popup.show();
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
+    private boolean itemSelected(MenuItem item) {
+        Intent intent = new Intent(this, BasicQuestionActivity.class);
         switch (item.getItemId()) {
             case R.id.basicQuestion:
-                break;
+                //intent.putExtra("QuestionType", "Basic");
+                Log.i("Console", "*** Debugging Purposes");
+                startActivity(intent);
+                return true;
             case R.id.mathQuestion:
-                break;
+                intent = new Intent(this, MathQuestionActivity.class);
+                Log.i("Console", "*** Debugging Purposes");
+                //intent.putExtra("QuestionType", "Math");
+                startActivity(intent);
+                return true;
             case R.id.bulletPointQuestion:
-                break;
+                intent = new Intent(this, BulletpointActivity.class);
+                Log.i("Console", "*** Debugging Purposes");
+                //intent.putExtra("QuestionType", "Bullet Point");
+                startActivity(intent);
+                return true;
             default:
-                break;
+                //Log.i("Console", "*** Debugging Purposes");
+                return super.onOptionsItemSelected(item);
         }
-        return super.onOptionsItemSelected(item);
     }
 
 }

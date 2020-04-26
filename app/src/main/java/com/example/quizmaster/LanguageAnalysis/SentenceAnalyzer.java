@@ -25,29 +25,37 @@ import opennlp.tools.util.Span;
  * Sentence Analyzer takes a String and uses the OpenNLP library to structure it down into readable form
  */
 public class SentenceAnalyzer {
-    private String input;
-    private String[] sentences;
-    private Span[] chunkSentences;
-    public SentenceAnalyzer(final String s) {
-        input = s;
+    private transient String[] sentences;
+    private transient Span[] chunkSentences;
+    private transient String[] speechTags;
+
+    public SentenceAnalyzer() {}
+
+    /**
+     * Updates the field to the passed in string
+     * @param s - The passed in string
+     */
+    private void updateFields(String s) {
         try {
-            sentences = detectSentence();
+            sentences = detectSentence(s);
             chunkSentences = chunkSentences();
+            speechTags = partOfSpeechTags();
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
+
     /**
      * Split up the 'input' string into words, counting a period as its own seperate token while taking into account
      * professional names such as Dr., Mr., Mrs., etc...
      * @return An array of strings (each string is an individual word)
      * @throws IOException - in case the model file is not found
      */
-    private String[] detectSentence() throws IOException {
-        InputStream stream = new FileInputStream("en-token.bin");
+    private String[] detectSentence(String s) throws IOException {
+        InputStream stream = new FileInputStream("en-sent.bin");
         TokenizerModel model = new TokenizerModel(stream);
         TokenizerME tokenizer = new TokenizerME(model);
-        String[] tokens = tokenizer.tokenize(input);
+        String[] tokens = tokenizer.tokenize(s);
         return tokens;
     }
 
@@ -86,7 +94,7 @@ public class SentenceAnalyzer {
         InputStream stream = new FileInputStream("en-chunker.bin");
         ChunkerModel model = new ChunkerModel(stream);
         ChunkerME chunker = new ChunkerME(model);
-        Span[] spans = chunker.chunkAsSpans(this.sentences, partOfSpeechTags());
+        Span[] spans = chunker.chunkAsSpans(this.sentences, this.speechTags);
         return spans;
     }
 
@@ -99,7 +107,7 @@ public class SentenceAnalyzer {
     private List<String> getTrueMeanings() throws IOException {
         InputStream stream = new FileInputStream("en-lemmatizer.dict");
         DictionaryLemmatizer lem = new DictionaryLemmatizer(stream);
-        List<String> lemmas = new LinkedList<>(Arrays.asList(lem.lemmatize(detectSentence(), partOfSpeechTags())));
+        List<String> lemmas = new LinkedList<>(Arrays.asList(lem.lemmatize(this.sentences, this.speechTags)));
         lemmas.remove(new String("O"));
         return lemmas;
     }
@@ -144,15 +152,17 @@ public class SentenceAnalyzer {
 
     /**
      * Creates a question (noun phrase + verb phrase + (TO/DT/PRP))
-     * @param sentence - The sentence passed in to create a question from
+     * @param s - The text passed in to create a question from
      * @return a question
      */
-    public String generateQuestion(final String[] sentence) {
+    public String generateQuestion(final String s) {
+        updateFields(s);
         Span[] spans = this.chunkSentences;
         int endIndex = findEndOfPhrase(spans, 0);
-        return concatStrings(sentence, 0, endIndex)
+        return concatStrings(sentences, 0, endIndex)
                 + findRemainingPhrase(endIndex)
                 + "?";
+
     }
 
     /**
@@ -161,22 +171,18 @@ public class SentenceAnalyzer {
      * @return a String to be added to the question
      */
     private String findRemainingPhrase(int index) {
-        try {
-            String[] sentence = this.sentences;
-            String[] tags = partOfSpeechTags();
-            String remainingPhrase = "";
-            int acc = index;
-            while (tags[acc].equals("TO") || tags[acc].equals("DT") || tags[acc].equals("PRP")) {
-                remainingPhrase = remainingPhrase + " " + sentence[acc];
-                if (acc >= sentence.length) {
-                    return null;
-                }
-                acc++;
+        String[] sentence = this.sentences;
+        String[] tags = this.speechTags;
+        String remainingPhrase = "";
+        int acc = index;
+        while (tags[acc].equals("TO") || tags[acc].equals("DT") || tags[acc].equals("PRP")) {
+            remainingPhrase = remainingPhrase + " " + sentence[acc];
+            if (acc >= sentence.length) {
+                return null;
             }
-            return remainingPhrase;
-        } catch (IOException exception) {
-            return "";
+            acc++;
         }
+        return remainingPhrase;
     }
 
     /**

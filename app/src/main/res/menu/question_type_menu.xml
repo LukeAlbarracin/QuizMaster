@@ -4,15 +4,15 @@
     android:id="@+id/basicQuestion"
     android:icon="@drawable/abc_vector_test"
     android:title="Basic Question"
-    xmlns:showAsAction="never"/>
+    xmlns:showAsAction="always"/>
     <item
     android:id="@+id/mathQuestion"
     android:icon="@drawable/abc_vector_test"
     android:title="Math Question"
-    xmlns:showAsAction="never"/>
+    xmlns:showAsAction="always"/>
     <item
     android:id="@+id/bulletPointQuestion"
     android:icon="@drawable/abc_vector_test"
     android:title="Bullet Point Question"
-    xmlns:showAsAction="never"/>
+    xmlns:showAsAction="always"/>
 </menu>
