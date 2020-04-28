@@ -11,4 +11,6 @@ public class MathQuestionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_math_question);
     }
+
+
 }

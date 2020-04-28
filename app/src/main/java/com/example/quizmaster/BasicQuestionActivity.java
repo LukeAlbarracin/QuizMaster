@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.PopupMenu;
 import android.widget.TextView;
 
+import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
 public class BasicQuestionActivity extends AppCompatActivity {
@@ -22,10 +23,10 @@ public class BasicQuestionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question_maker);
         Button confirm = findViewById(R.id.ConfirmQuestion);
-        TextInputLayout text = findViewById(R.id.textInputLayout);
+        TextInputEditText text = findViewById(R.id.AnswerInput);
         confirm.setVisibility(View.VISIBLE);
         confirm.setOnClickListener((unused -> {
-            CharSequence input = text.getEditText().getText().toString();
+            CharSequence input = text.getText();
             Intent intent = new Intent(getApplicationContext(), QuizMakerActivity.class);
             intent.putExtra("FormInput", input);
             startActivity(intent);

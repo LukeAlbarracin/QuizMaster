@@ -13,10 +13,10 @@ import java.io.InputStream;
 import java.util.Arrays;
 import java.util.List;
 
-import opennlp.tools.namefind.NameFinderME;
+/*import opennlp.tools.namefind.NameFinderME;
 import opennlp.tools.namefind.TokenNameFinderModel;
 import opennlp.tools.tokenize.SimpleTokenizer;
-import opennlp.tools.util.Span;
+import opennlp.tools.util.Span; */
 
 public class MainActivity extends AppCompatActivity {
     @Override

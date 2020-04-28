@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/holo_blue_light"
     tools:context=".MainActivity">
 
     <Button
@@ -12,6 +13,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="272dp"
         android:layout_marginBottom="30dp"
+        android:background="@android:color/holo_blue_dark"
+        android:drawableTop="@android:drawable/divider_horizontal_dark"
         android:text="Create New Quiz"
         app:layout_constraintBottom_toTopOf="@+id/LocalQuizButton"
         app:layout_constraintEnd_toEndOf="parent"
@@ -25,7 +28,8 @@
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginBottom="36dp"
-        android:text="VIEW LOCAL QUIZZES"
+        android:background="@android:color/holo_blue_dark"
+        android:text="View Local Quizzes"
         app:layout_constraintBottom_toTopOf="@+id/OnlineQuizButton"
         app:layout_constraintStart_toStartOf="@+id/NewQuizButton"
         app:layout_constraintTop_toBottomOf="@+id/NewQuizButton" />
@@ -37,7 +41,8 @@
         android:layout_marginStart="116dp"
         android:layout_marginLeft="116dp"
         android:layout_marginBottom="287dp"
-        android:text="LOOK UP OTHER QUIZZES"
+        android:background="@android:color/holo_blue_dark"
+        android:text="Look Up Other Quizzes"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/LocalQuizButton" />

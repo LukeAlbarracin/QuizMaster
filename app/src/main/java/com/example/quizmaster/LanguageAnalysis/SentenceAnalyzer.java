@@ -1,5 +1,5 @@
 package com.example.quizmaster.LanguageAnalysis;
-
+/*
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -23,7 +23,7 @@ import opennlp.tools.util.Span;
  * https://www.programcreek.com/2012/05/opennlp-tutorial/
  *
  * Sentence Analyzer takes a String and uses the OpenNLP library to structure it down into readable form
- */
+ *//*
 public class SentenceAnalyzer {
     private transient String[] sentences;
     private transient Span[] chunkSentences;
@@ -34,7 +34,7 @@ public class SentenceAnalyzer {
     /**
      * Updates the field to the passed in string
      * @param s - The passed in string
-     */
+     *//*
     private void updateFields(String s) {
         try {
             sentences = detectSentence(s);
@@ -50,7 +50,7 @@ public class SentenceAnalyzer {
      * professional names such as Dr., Mr., Mrs., etc...
      * @return An array of strings (each string is an individual word)
      * @throws IOException - in case the model file is not found
-     */
+     *//*
     private String[] detectSentence(String s) throws IOException {
         InputStream stream = new FileInputStream("en-sent.bin");
         TokenizerModel model = new TokenizerModel(stream);
@@ -63,7 +63,7 @@ public class SentenceAnalyzer {
      * Uses a pre-made model to detect a pronoun associated with a person's name (Probably won't use)
      * @return An array of Span, which includes an inclusive and exclusive inner and outer bound
      * @throws IOException - in case the model file is not found
-     */
+     *//*
     private Span[] detectPerson() throws IOException {
         InputStream stream = new FileInputStream("en-ner-person.bin");
         TokenNameFinderModel tFinder = new TokenNameFinderModel(stream);
@@ -76,7 +76,7 @@ public class SentenceAnalyzer {
      * Uses a pre-made model to detect part-of-speech
      * @return An array of word's part-of-speech values (e.g. noun, adjective, verb)
      * @throws IOException - in case the model file is not found
-     */
+     *//*
     private String[] partOfSpeechTags() throws IOException {
         InputStream stream = new FileInputStream("en-pos-perceptron.bin");
         POSModel model = new POSModel(stream);
@@ -89,7 +89,7 @@ public class SentenceAnalyzer {
      * Uses a pre-made model to separate sentences mainly between noun and verb phrases
      * @return An array of Span, which includes an inclusive and exclusive inner and outer bound
      * @throws IOException - in case the model file is not found
-     */
+     *//*
     private Span[] chunkSentences() throws IOException {
         InputStream stream = new FileInputStream("en-chunker.bin");
         ChunkerModel model = new ChunkerModel(stream);
@@ -103,7 +103,7 @@ public class SentenceAnalyzer {
      * Removes plurality and tense amongst other things.
      * @return A Linked List of Strings
      * @throws IOException - in case the model file is not found
-     */
+     *//*
     private List<String> getTrueMeanings() throws IOException {
         InputStream stream = new FileInputStream("en-lemmatizer.dict");
         DictionaryLemmatizer lem = new DictionaryLemmatizer(stream);
@@ -116,7 +116,7 @@ public class SentenceAnalyzer {
      * Overriden equals method used to check for sentence meaning equality. Still in progress.
      * @param o - The object being tested against for equality
      * @return true / false
-     */
+     *//*
     @Override
     public boolean equals(final Object o) {
         if (o == this) {
@@ -138,7 +138,7 @@ public class SentenceAnalyzer {
      * The assumption that all unknown words are proper nouns ("e.g. Motorola").
      * @param tags - The part of speech (e.g. noun) tags
      * @return the updated tags, with unknown part of speech tags assumed to be proper nouns
-     */
+     *//*
     private String[] fixUnmarkedTags(String[] tags) {
         String[] newTags = tags;
         for (int i = 0; i < tags.length; i++) {
@@ -154,7 +154,7 @@ public class SentenceAnalyzer {
      * Creates a question (noun phrase + verb phrase + (TO/DT/PRP))
      * @param s - The text passed in to create a question from
      * @return a question
-     */
+     *//*
     public String generateQuestion(final String s) {
         updateFields(s);
         Span[] spans = this.chunkSentences;
@@ -169,7 +169,7 @@ public class SentenceAnalyzer {
      * Based on the part of speech, will add itself to the question schema
      * @param index - The index where the verb phrase ends
      * @return a String to be added to the question
-     */
+     *//*
     private String findRemainingPhrase(int index) {
         String[] sentence = this.sentences;
         String[] tags = this.speechTags;
@@ -192,6 +192,7 @@ public class SentenceAnalyzer {
      * @param end - the end index
      * @return a string consisting of all elements within the two indices
      */
+    /*
     private String concatStrings(String[] words, int start, int end) {
         String newWord = "";
         for (int i = start; i < end; i++) {
@@ -199,13 +200,14 @@ public class SentenceAnalyzer {
         }
         return newWord;
     }
-
+*/
     /**
      * The primary logic for question making that finds a noun + verb phrase combination
      * @param spans - the range over which a noun/verb/etc phrase covers
      * @param acc - currently more of a local variable, but may be utilized in future updates for something else
      * @return the index of the end of the verb phrase
      */
+    /*
     private int findEndOfPhrase(final Span[] spans, int acc) {
         int phraseEndIndex = 0;
         while (!spans[acc].getType().equals("VP")) {
@@ -224,4 +226,4 @@ public class SentenceAnalyzer {
         }
         return phraseEndIndex;
     }
-}
+ } */

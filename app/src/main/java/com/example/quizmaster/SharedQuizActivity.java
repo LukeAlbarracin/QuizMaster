@@ -1,5 +1,6 @@
 package com.example.quizmaster;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -18,13 +19,12 @@ public class SharedQuizActivity extends OldQuizActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton add = findViewById(R.id.AddQuestionButton);
-        add.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
+        // Allow create your own quiz from all sectors
+        FloatingActionButton add = findViewById(R.id.createQuiz);
+        add.setOnClickListener((unused) -> {
+            Intent intent = new Intent(this, QuizMakerActivity.class);
+            startActivity(intent);
+            finish();
         });
     }
 

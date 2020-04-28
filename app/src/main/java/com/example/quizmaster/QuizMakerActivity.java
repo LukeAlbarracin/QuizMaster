@@ -40,8 +40,8 @@ public class QuizMakerActivity extends AppCompatActivity {
     protected void onRestart() {
         super.onRestart();
         TextView text = findViewById(R.id.BlankField);
-        text.setVisibility(View.VISIBLE);
         text.setText(getIntent().getCharSequenceExtra("FormInput"));
+        text.setVisibility(View.VISIBLE);
     }
 
     public void displayPopup (View v) {
