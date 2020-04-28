@@ -17,23 +17,15 @@ import android.widget.ActionMenuView;
 import android.widget.PopupMenu;
 import android.widget.TextView;
 
-public class QuizMakerActivity extends AppCompatActivity {
+public class QuizMakerActivity extends AppCompatActivity implements ButtonListener {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz_maker);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.AddQuestionButton);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-                displayPopup(getCurrentFocus());
-            }
-        });
+        displayButtons();
     }
 
     @Override
@@ -44,21 +36,25 @@ public class QuizMakerActivity extends AppCompatActivity {
         text.setVisibility(View.VISIBLE);
     }
 
-    public void displayPopup (View v) {
+    public void displayButtons() {
+        FloatingActionButton questionButton = (FloatingActionButton) findViewById(R.id.AddQuestionButton);
+        questionButton.setOnClickListener((unused) -> {
+            displayPopup(getCurrentFocus());
+        });
+    }
+
+    private void displayPopup (final View v) {
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.AddQuestionButton);
         PopupMenu popup = new PopupMenu(this, fab);
         MenuInflater inflater = popup.getMenuInflater();
         inflater.inflate(R.menu.question_type_menu, popup.getMenu());
-        popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
-            @Override
-            public boolean onMenuItemClick(MenuItem item) {
-                return itemSelected(item);
-            }
+        popup.setOnMenuItemClickListener((item) -> {
+           return itemSelected(item);
         });
         popup.show();
     }
 
-    private boolean itemSelected(MenuItem item) {
+    private boolean itemSelected(final MenuItem item) {
         Intent intent = new Intent(this, BasicQuestionActivity.class);
         switch (item.getItemId()) {
             case R.id.basicQuestion:

@@ -16,12 +16,16 @@ import android.widget.TextView;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
-public class BasicQuestionActivity extends AppCompatActivity {
+public class BasicQuestionActivity extends AppCompatActivity implements ButtonListener{
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question_maker);
+        displayButtons();
+    }
+
+    public void displayButtons() {
         Button confirm = findViewById(R.id.ConfirmQuestion);
         TextInputEditText text = findViewById(R.id.AnswerInput);
         confirm.setVisibility(View.VISIBLE);
@@ -32,6 +36,5 @@ public class BasicQuestionActivity extends AppCompatActivity {
             startActivity(intent);
             finish();
         }));
-        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 }

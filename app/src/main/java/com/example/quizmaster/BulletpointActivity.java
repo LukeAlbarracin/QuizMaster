@@ -12,16 +12,16 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
-public class BulletpointActivity extends AppCompatActivity {
+public class BulletpointActivity extends AppCompatActivity implements ButtonListener {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bulletpoint);
-        addButtons();
+        displayButtons();
     }
 
-    private void addButtons() {
+    public void displayButtons() {
         FloatingActionButton button = (FloatingActionButton) findViewById(R.id.AddBulletpointButton);
         button.setOnClickListener((unused) -> {
             TextInputEditText textBox = new TextInputEditText(this);

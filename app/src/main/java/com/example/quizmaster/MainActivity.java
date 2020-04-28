@@ -18,9 +18,9 @@ import opennlp.tools.namefind.TokenNameFinderModel;
 import opennlp.tools.tokenize.SimpleTokenizer;
 import opennlp.tools.util.Span; */
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements ButtonListener {
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         getSupportActionBar().hide();
@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         displayButtons();
     }
 
-   private void displayButtons() {
+   public void displayButtons() {
        Button quizMakerButton = findViewById(R.id.NewQuizButton);
        quizMakerButton.setVisibility(View.VISIBLE);
        quizMakerButton.setOnClickListener((unused -> {
