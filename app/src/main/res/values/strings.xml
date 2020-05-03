@@ -98,4 +98,7 @@
     <string name="create_new_quiz">Create New Quiz</string>
     <string name="your_quizzes">Your Quizzes</string>
     <string name="library_icon">library icon</string>
+    <string name="create_quiz">Create Quiz</string>
+    <string name="your_library">Your Library</string>
+    <string name="quizmaster">QuizMaster</string>
 </resources>
