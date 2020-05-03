@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#364AAC"
+    android:background="#382DA2"
     tools:context=".MainActivity">
 
     <Button
@@ -14,7 +14,7 @@
         android:layout_marginTop="301dp"
         android:layout_marginBottom="382dp"
         android:alpha=".6"
-        android:background="#858FEC"
+        android:background="#8786EB"
         android:drawableTop="@android:drawable/divider_horizontal_dark"
         android:fontFamily="@font/alegreya_sans_thin"
         android:text="@string/create_new_quiz"
@@ -35,7 +35,7 @@
         android:layout_marginTop="349dp"
         android:layout_marginBottom="334dp"
         android:alpha=".6"
-        android:background="#5068DB"
+        android:background="#5355D8"
         android:fontFamily="@font/alegreya_sans_thin"
         android:text="@string/your_quizzes"
         android:textAlignment="center"
@@ -57,7 +57,7 @@
         android:layout_marginTop="397dp"
         android:layout_marginBottom="286dp"
         android:alpha=".6"
-        android:background="#5068DB"
+        android:background="#5355D8"
         android:fontFamily="@font/alegreya_sans_thin"
         android:text="@android:string/search_go"
         android:textAlignment="center"
@@ -94,11 +94,11 @@
 
     <ImageView
         android:id="@+id/add"
-        android:layout_width="wrap_content"
+        android:layout_width="32dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
+        android:layout_marginStart="31dp"
         android:layout_marginTop="309dp"
-        android:layout_marginEnd="347dp"
+        android:layout_marginEnd="348dp"
         android:layout_marginBottom="390dp"
         android:contentDescription="@string/add_icon"
         android:visibility="visible"
@@ -114,9 +114,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="406dp"
+        android:layout_marginEnd="347dp"
         android:layout_marginBottom="293dp"
         android:contentDescription="@string/search_icon"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@android:drawable/ic_menu_search" />
