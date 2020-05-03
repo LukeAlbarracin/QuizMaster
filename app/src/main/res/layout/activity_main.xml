@@ -11,8 +11,7 @@
         android:id="@+id/NewQuizButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="304dp"
-        android:layout_marginBottom="382dp"
+        android:layout_marginBottom="362dp"
         android:alpha=".7"
         android:background="#7675D5"
         android:drawableTop="@android:drawable/divider_horizontal_dark"
@@ -25,16 +24,13 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/LocalQuizButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="349dp"
-        android:layout_marginBottom="334dp"
+        android:layout_marginBottom="314dp"
         android:alpha=".7"
         android:background="#5355D8"
         android:fontFamily="@font/alegreya_sans_sc"
@@ -46,16 +42,13 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/OnlineQuizButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="397dp"
-        android:layout_marginBottom="286dp"
+        android:layout_marginBottom="266dp"
         android:alpha=".7"
         android:background="#5355D8"
         android:fontFamily="@font/alegreya_sans_sc"
@@ -67,9 +60,7 @@
         android:typeface="normal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/QuizMaster"
@@ -96,19 +87,13 @@
         android:id="@+id/add"
         android:layout_width="32dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="312dp"
-        android:layout_marginEnd="360dp"
-        android:layout_marginBottom="387dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginBottom="370dp"
         android:adjustViewBounds="false"
         android:contentDescription="@string/add_icon"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@android:drawable/ic_menu_add"
         tools:visibility="visible" />
 
@@ -117,14 +102,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="406dp"
-        android:layout_marginEnd="347dp"
-        android:layout_marginBottom="293dp"
+        android:layout_marginBottom="273dp"
         android:contentDescription="@string/search_icon"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@android:drawable/ic_menu_search" />
 
     <ImageView
@@ -132,14 +113,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="358dp"
-        android:layout_marginEnd="348dp"
-        android:layout_marginBottom="341dp"
+        android:layout_marginBottom="321dp"
         android:contentDescription="@string/library_icon"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@android:drawable/ic_menu_sort_by_size" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
