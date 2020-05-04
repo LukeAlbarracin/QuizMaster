@@ -13,16 +13,13 @@
         android:layout_marginStart="1dp"
         android:layout_marginTop="200dp"
         android:layout_marginEnd="1dp"
-        android:layout_marginBottom="52dp"
-        app:layout_constraintBottom_toTopOf="@+id/editText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/AnswerInput"
+            android:id="@+id/QuestionText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Question" />
@@ -51,18 +48,22 @@
         app:layout_constraintStart_toStartOf="@+id/ConfirmQuestion"
         app:layout_constraintTop_toBottomOf="@+id/ConfirmQuestion" />
 
-    <EditText
-        android:id="@+id/editText"
-        android:layout_width="398dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="342dp"
-        android:ems="10"
-        android:gravity="start|top"
-        android:inputType="textMultiLine"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/AnswerInputLayout"
+        android:layout_width="428dp"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.076"
+        app:layout_constraintHorizontal_bias="0.407"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.43">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/AnswerText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Answer" />
+    </com.google.android.material.textfield.TextInputLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

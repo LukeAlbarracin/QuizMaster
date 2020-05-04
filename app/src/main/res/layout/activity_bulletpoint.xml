@@ -7,7 +7,7 @@
     tools:context=".BulletpointActivity">
 
     <LinearLayout
-        android:id="@+id/linearLayout"
+        android:id="@+id/linLayout"
         android:layout_width="409dp"
         android:layout_height="0dp"
         android:layout_marginBottom="1dp"
@@ -35,7 +35,7 @@
         android:layout_marginTop="88dp"
         android:layout_marginBottom="53dp"
         android:hint="Bulletpoint: "
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintBottom_toTopOf="@+id/linLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

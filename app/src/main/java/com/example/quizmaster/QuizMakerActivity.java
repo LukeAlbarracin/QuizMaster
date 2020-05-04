@@ -4,7 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
+import com.google.android.material.textfield.TextInputEditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -13,7 +13,7 @@ import android.util.Log;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ActionMenuView;
+import android.widget.LinearLayout;
 import android.widget.PopupMenu;
 import android.widget.TextView;
 
@@ -29,10 +29,16 @@ public class QuizMakerActivity extends AppCompatActivity implements ButtonListen
     }
 
     @Override
-    protected void onRestart() {
-        super.onRestart();
+    protected void onStart() {
+        super.onStart();
         TextView text = findViewById(R.id.BlankField);
-        text.setText(getIntent().getCharSequenceExtra("FormInput"));
+        System.out.println("***CONSOLE*** HELLO!!!");
+        text.setText(getIntent().getCharSequenceExtra("qText"));
+        TextInputEditText textBox = new TextInputEditText(this);
+        LinearLayout layout = (LinearLayout) findViewById(R.id.linLayout);
+        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT);
+        layout.addView(textBox, params);
         text.setVisibility(View.VISIBLE);
     }
 
