@@ -1,37 +1,91 @@
 package com.example.quizmaster;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
 import com.google.android.material.textfield.TextInputEditText;
 
+import java.util.ArrayList;
+
 public class BasicQuestionActivity extends AppCompatActivity implements ButtonListener{
 
+
     @Override
-    protected void onCreate(final Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    protected void onResume() {
+        super.onResume();
         setContentView(R.layout.activity_question_maker);
+        /*if (qList == null || tList == null ) {
+            qList = new ArrayList<CharSequence>();
+            new ArrayList<CharSequence>();
+        }*/
         displayButtons();
     }
 
     public void displayButtons() {
+        ArrayList<CharSequence> qList = new ArrayList<CharSequence>();
+        ArrayList<CharSequence> tList = new ArrayList<CharSequence>();
         Button confirm = findViewById(R.id.ConfirmQuestion);
         TextInputEditText qText = findViewById(R.id.QuestionText);
         TextInputEditText aText = findViewById(R.id.AnswerText);
+        if (getIntent().getCharSequenceArrayListExtra("backQ") != null &&
+            getIntent().getCharSequenceArrayListExtra("backT") != null) {
+            qList = getIntent().getCharSequenceArrayListExtra("backQ");
+            tList = getIntent().getCharSequenceArrayListExtra("backT");
+        }
+        System.out.println("Procedure: " + getIntent());
+        System.out.println("SuperQ " + getIntent().getCharSequenceArrayListExtra("backQ"));
+        System.out.println("SuperT " + getIntent().getCharSequenceArrayListExtra("backT"));
         confirm.setVisibility(View.VISIBLE);
-        confirm.setOnClickListener((unused -> {
-            CharSequence input = qText.getText();
-            CharSequence input2 = aText.getText();
-            Intent intent = new Intent(getApplicationContext(), QuizMakerActivity.class);
-            intent.putExtra("qText", input);
-            intent.putExtra("aText", input2);
-            startActivity(intent);
-            finish();
-        }));
+        final ArrayList<CharSequence> immutableQ = qList;
+        final ArrayList<CharSequence> immutableT = tList;
+        Context context = this;
+        confirm.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                CharSequence input = qText.getText();
+                CharSequence input2 = aText.getText();
+                ArrayList copyQ = new ArrayList<CharSequence>(immutableQ);
+                ArrayList copyT = new ArrayList<CharSequence>(immutableT);
+                copyQ.add(input);
+                copyT.add(input2);
+
+                Log.d("qList", copyQ.toString());
+                Log.d("tList", copyT.toString());
+                Intent intent = new Intent(context, QuizMakerActivity.class);
+                intent.putExtra("qText", copyQ);
+                intent.putExtra("tText", copyT);
+                intent.putExtra("mode", "basic");
+                startActivity(intent);
+            }
+        });
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
 
     }
+
+    /*@Override
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        super.onSaveInstanceState(savedInstanceState);
+        savedInstanceState.putCharSequenceArrayList("qList", qList);
+        savedInstanceState.putCharSequenceArrayList("tList", tList);
+
+    }
+
+    @Override
+    public void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        qList = savedInstanceState.getCharSequenceArrayList("qList");
+        tList = savedInstanceState.getCharSequenceArrayList("tList");
+    }*/
 }

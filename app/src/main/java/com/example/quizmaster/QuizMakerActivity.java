@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -17,7 +18,12 @@ import android.widget.LinearLayout;
 import android.widget.PopupMenu;
 import android.widget.TextView;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.List;
+
 public class QuizMakerActivity extends AppCompatActivity implements ButtonListener {
+    private transient Intent intent;
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
@@ -29,17 +35,42 @@ public class QuizMakerActivity extends AppCompatActivity implements ButtonListen
     }
 
     @Override
-    protected void onStart() {
-        super.onStart();
-        TextView text = findViewById(R.id.BlankField);
+    protected void onResume() {
+        super.onResume();
+        LinearLayout text = findViewById(R.id.linLayout);
         System.out.println("***CONSOLE*** HELLO!!!");
-        text.setText(getIntent().getCharSequenceExtra("qText"));
-        TextInputEditText textBox = new TextInputEditText(this);
-        LinearLayout layout = (LinearLayout) findViewById(R.id.linLayout);
-        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
-                LinearLayout.LayoutParams.WRAP_CONTENT);
-        layout.addView(textBox, params);
-        text.setVisibility(View.VISIBLE);
+        //text.setText(getIntent().getCharSequenceExtra("qText"));
+        if (getIntent().getCharSequenceArrayListExtra("qText") == null ||
+                getIntent().getCharSequenceArrayListExtra("tText") == null) {
+            return;
+        }
+        ArrayList<CharSequence> qList = getIntent().getCharSequenceArrayListExtra("qText");
+        ArrayList<CharSequence> tList = getIntent().getCharSequenceArrayListExtra("tText");
+        for (CharSequence q : qList) {
+            TextInputEditText textBox = new TextInputEditText(this);
+            textBox.setText(q);
+            LinearLayout layout = (LinearLayout) findViewById(R.id.linLayout);
+            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
+                    LinearLayout.LayoutParams.WRAP_CONTENT);
+            layout.addView(textBox, params);
+            text.setVisibility(View.VISIBLE);
+        }
+        for (CharSequence t : tList) {
+            TextInputEditText textBox = new TextInputEditText(this);
+            textBox.setText(t);
+            LinearLayout layout = (LinearLayout) findViewById(R.id.linLayout);
+            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
+                    LinearLayout.LayoutParams.WRAP_CONTENT);
+            layout.addView(textBox, params);
+            text.setVisibility(View.VISIBLE);
+        }
+        this.intent = new Intent(this, BasicQuestionActivity.class);
+        Log.i("qStuff" , qList.toString());
+        Log.i("tStuff", tList.toString());
+        if (getIntent().getStringExtra("mode") != null && getIntent().getStringExtra("mode").equals("basic")) {
+            intent.putExtra("backQ", qList);
+            intent.putExtra("backT", tList);
+        }
     }
 
     public void displayButtons() {
@@ -61,25 +92,34 @@ public class QuizMakerActivity extends AppCompatActivity implements ButtonListen
     }
 
     private boolean itemSelected(final MenuItem item) {
-        Intent intent = new Intent(this, BasicQuestionActivity.class);
         switch (item.getItemId()) {
             case R.id.basicQuestion:
                 //intent.putExtra("QuestionType", "Basic");
                 Log.i("Console", "*** Debugging Purposes");
+                if (this.intent == null) {
+                    this.intent = new Intent(this, BasicQuestionActivity.class);
+                }
                 startActivity(intent);
                 return true;
-            case R.id.mathQuestion:
-                intent = new Intent(this, MathQuestionActivity.class);
+            case R.id.autoQuestion:
+                if (this.intent == null) {
+                    getIntent().putExtra("mode", "complex");
+                    this.intent = new Intent(this, BasicQuestionActivity.class);
+                }
+                //this.intent.setClassName(this, "InputReaderActivity");
+                this.intent.setClass(this, InputReaderActivity.class);
+                        //= new Intent(this, InputReaderActivity.class);
+
                 Log.i("Console", "*** Debugging Purposes");
                 //intent.putExtra("QuestionType", "Math");
-                startActivity(intent);
+                startActivity(this.intent);
                 return true;
-            case R.id.bulletPointQuestion:
+            /*case R.id.bulletPointQuestion:
                 intent = new Intent(this, BulletpointActivity.class);
                 Log.i("Console", "*** Debugging Purposes");
                 //intent.putExtra("QuestionType", "Bullet Point");
                 startActivity(intent);
-                return true;
+                return true;*/
             default:
                 //Log.i("Console", "*** Debugging Purposes");
                 return super.onOptionsItemSelected(item);
