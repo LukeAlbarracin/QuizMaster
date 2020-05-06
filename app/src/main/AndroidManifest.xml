@@ -7,24 +7,25 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
     <application
-        android:usesCleartextTraffic="true"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".InputReaderActivity"></activity>
-        <activity android:name=".BulletpointActivity" />
-        <activity android:name=".MathQuestionActivity" />
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".QuizTakerActivity"></activity>
+        <activity android:name=".QuestionActivities.InputReaderActivity" />
+        <activity android:name=".QuestionActivities.BulletpointActivity" />
+        <activity android:name=".QuestionActivities.MathQuestionActivity" />
         <activity
-            android:name=".SharedQuizActivity"
+            android:name=".StartingMenu.SharedQuizActivity"
             android:label="@string/title_activity_shared_quiz"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".OldQuizActivity" />
-        <activity android:name=".BasicQuestionActivity" />
+        <activity android:name=".StartingMenu.OldQuizActivity" />
+        <activity android:name=".QuestionActivities.BasicQuestionActivity" />
         <activity
-            android:name=".QuizMakerActivity"
+            android:name=".StartingMenu.QuizMakerActivity"
             android:label="@string/title_activity_quiz_maker"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".MainActivity">

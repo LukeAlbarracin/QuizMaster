@@ -7,11 +7,10 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 
-import java.io.InputStream;
-import java.util.Arrays;
-import java.util.List;
+import com.example.quizmaster.StartingMenu.OldQuizActivity;
+import com.example.quizmaster.StartingMenu.QuizMakerActivity;
+import com.example.quizmaster.StartingMenu.SharedQuizActivity;
 
 /*import opennlp.tools.namefind.NameFinderME;
 import opennlp.tools.namefind.TokenNameFinderModel;

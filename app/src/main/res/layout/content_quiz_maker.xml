@@ -6,7 +6,7 @@
     android:layout_height="wrap_content"
     android:background="#FFFFFF"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".QuizMakerActivity"
+    tools:context=".StartingMenu.QuizMakerActivity"
     tools:showIn="@layout/activity_quiz_maker">
 
     <LinearLayout
@@ -23,7 +23,9 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:weightSum="10"
-            android:orientation="vertical" />
+            android:orientation="vertical" >
+
+        </LinearLayout>
 
 
         <LinearLayout
@@ -32,7 +34,10 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:weightSum="10"
-            android:orientation="vertical" />
+            android:orientation="vertical" >
+
+        </LinearLayout>
+
     </LinearLayout>
 
 </androidx.core.widget.NestedScrollView>
