@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.util.Log;
+import android.util.Size;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -47,22 +48,24 @@ public class QuizMakerActivity extends AppCompatActivity implements ButtonListen
         ArrayList<CharSequence> qList = getIntent().getCharSequenceArrayListExtra("qText");
         ArrayList<CharSequence> tList = getIntent().getCharSequenceArrayListExtra("tText");
         for (CharSequence q : qList) {
-            TextInputEditText textBox = new TextInputEditText(this);
+            TextView textBox = new TextView(this);
             textBox.setText(q);
-            LinearLayout layout = (LinearLayout) findViewById(R.id.linLayout);
+            LinearLayout layout = (LinearLayout) findViewById(R.id.leftLayout);
             LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
                     LinearLayout.LayoutParams.WRAP_CONTENT);
             layout.addView(textBox, params);
-            text.setVisibility(View.VISIBLE);
+            textBox.setVisibility(View.VISIBLE);
+
         }
         for (CharSequence t : tList) {
-            TextInputEditText textBox = new TextInputEditText(this);
+            TextView textBox = new TextView(this);
             textBox.setText(t);
-            LinearLayout layout = (LinearLayout) findViewById(R.id.linLayout);
+            LinearLayout layout = (LinearLayout) findViewById(R.id.rightLayout);
             LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
                     LinearLayout.LayoutParams.WRAP_CONTENT);
+            textBox.setGravity(View.FOCUS_RIGHT);
             layout.addView(textBox, params);
-            text.setVisibility(View.VISIBLE);
+            textBox.setVisibility(View.VISIBLE);
         }
         this.intent = new Intent(this, BasicQuestionActivity.class);
         Log.i("qStuff" , qList.toString());

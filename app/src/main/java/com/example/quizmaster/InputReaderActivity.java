@@ -85,7 +85,7 @@ public class InputReaderActivity extends AppCompatActivity {
                     public void onResponse(String response) {
                         // Display the first 500 characters of the response string.
                         Log.i("Y", "***There***");
-                        textView.setText("Response is: " + response);
+                        textView.setText(response);
                         queue.stop();
 
                         Intent intent = new Intent(context, QuizMakerActivity.class);
@@ -93,8 +93,9 @@ public class InputReaderActivity extends AppCompatActivity {
                                 ? qList = new ArrayList<CharSequence>() : getIntent().getCharSequenceArrayListExtra("backQ");
                         ArrayList<CharSequence> tList = (getIntent().getCharSequenceArrayListExtra("backT") == null)
                                 ? tList = new ArrayList<CharSequence>() : getIntent().getCharSequenceArrayListExtra("backT");
-                        String s = addParticularTokens(((TextView) findViewById(R.id.someText)).getText());
-                        qList.add(response);
+                        String[] col = response.split(";");
+                        qList.add(col[0]+ " ...");
+                        tList.add(col[1]);
                         intent.putExtra("mode", "basic");
                         intent.putExtra("qText", qList);
                         intent.putExtra("tText", tList);
