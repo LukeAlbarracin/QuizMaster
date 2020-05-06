@@ -39,15 +39,13 @@ public class QuizMakerActivity extends AppCompatActivity implements ButtonListen
     protected void onResume() {
         super.onResume();
         LinearLayout text = findViewById(R.id.linLayout);
-        System.out.println("***CONSOLE*** HELLO!!!");
-        //text.setText(getIntent().getCharSequenceExtra("qText"));
         if (getIntent().getCharSequenceArrayListExtra("qText") == null ||
                 getIntent().getCharSequenceArrayListExtra("tText") == null) {
             return;
         }
         ArrayList<CharSequence> qList = getIntent().getCharSequenceArrayListExtra("qText");
         ArrayList<CharSequence> tList = getIntent().getCharSequenceArrayListExtra("tText");
-        for (CharSequence q : qList) {
+        qList.forEach((q) -> {
             TextView textBox = new TextView(this);
             textBox.setText(q);
             LinearLayout layout = (LinearLayout) findViewById(R.id.leftLayout);
@@ -55,9 +53,8 @@ public class QuizMakerActivity extends AppCompatActivity implements ButtonListen
                     LinearLayout.LayoutParams.WRAP_CONTENT);
             layout.addView(textBox, params);
             textBox.setVisibility(View.VISIBLE);
-
-        }
-        for (CharSequence t : tList) {
+        });
+        tList.forEach((t) -> {
             TextView textBox = new TextView(this);
             textBox.setText(t);
             LinearLayout layout = (LinearLayout) findViewById(R.id.rightLayout);
@@ -66,11 +63,12 @@ public class QuizMakerActivity extends AppCompatActivity implements ButtonListen
             textBox.setGravity(View.FOCUS_RIGHT);
             layout.addView(textBox, params);
             textBox.setVisibility(View.VISIBLE);
-        }
+        });
         this.intent = new Intent(this, BasicQuestionActivity.class);
-        Log.i("qStuff" , qList.toString());
-        Log.i("tStuff", tList.toString());
-        if (getIntent().getStringExtra("mode") != null && getIntent().getStringExtra("mode").equals("basic")) {
+        //Log.i("qStuff" , qList.toString());
+        //Log.i("tStuff", tList.toString());
+        if (getIntent().getStringExtra("mode") != null &&
+                getIntent().getStringExtra("mode").equals("basic")) {
             intent.putExtra("backQ", qList);
             intent.putExtra("backT", tList);
         }
@@ -97,7 +95,6 @@ public class QuizMakerActivity extends AppCompatActivity implements ButtonListen
     private boolean itemSelected(final MenuItem item) {
         switch (item.getItemId()) {
             case R.id.basicQuestion:
-                //intent.putExtra("QuestionType", "Basic");
                 Log.i("Console", "*** Debugging Purposes");
                 if (this.intent == null) {
                     this.intent = new Intent(this, BasicQuestionActivity.class);
@@ -109,12 +106,7 @@ public class QuizMakerActivity extends AppCompatActivity implements ButtonListen
                     getIntent().putExtra("mode", "complex");
                     this.intent = new Intent(this, BasicQuestionActivity.class);
                 }
-                //this.intent.setClassName(this, "InputReaderActivity");
                 this.intent.setClass(this, InputReaderActivity.class);
-                        //= new Intent(this, InputReaderActivity.class);
-
-                Log.i("Console", "*** Debugging Purposes");
-                //intent.putExtra("QuestionType", "Math");
                 startActivity(this.intent);
                 return true;
             /*case R.id.bulletPointQuestion:
@@ -124,7 +116,6 @@ public class QuizMakerActivity extends AppCompatActivity implements ButtonListen
                 startActivity(intent);
                 return true;*/
             default:
-                //Log.i("Console", "*** Debugging Purposes");
                 return super.onOptionsItemSelected(item);
         }
     }

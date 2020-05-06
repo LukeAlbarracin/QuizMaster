@@ -21,10 +21,6 @@ public class BasicQuestionActivity extends AppCompatActivity implements ButtonLi
     protected void onResume() {
         super.onResume();
         setContentView(R.layout.activity_question_maker);
-        /*if (qList == null || tList == null ) {
-            qList = new ArrayList<CharSequence>();
-            new ArrayList<CharSequence>();
-        }*/
         displayButtons();
     }
 
@@ -34,14 +30,10 @@ public class BasicQuestionActivity extends AppCompatActivity implements ButtonLi
         Button confirm = findViewById(R.id.ConfirmQuestion);
         TextInputEditText qText = findViewById(R.id.QuestionText);
         TextInputEditText aText = findViewById(R.id.AnswerText);
-        if (getIntent().getCharSequenceArrayListExtra("backQ") != null &&
-            getIntent().getCharSequenceArrayListExtra("backT") != null) {
-            qList = getIntent().getCharSequenceArrayListExtra("backQ");
-            tList = getIntent().getCharSequenceArrayListExtra("backT");
-        }
-        System.out.println("Procedure: " + getIntent());
-        System.out.println("SuperQ " + getIntent().getCharSequenceArrayListExtra("backQ"));
-        System.out.println("SuperT " + getIntent().getCharSequenceArrayListExtra("backT"));
+        qList = getIntent().getCharSequenceArrayListExtra("backQ") != null ?
+                getIntent().getCharSequenceArrayListExtra("backQ") : qList;
+        tList = getIntent().getCharSequenceArrayListExtra("backT") != null ?
+                getIntent().getCharSequenceArrayListExtra("backT") : tList;
         confirm.setVisibility(View.VISIBLE);
         final ArrayList<CharSequence> immutableQ = qList;
         final ArrayList<CharSequence> immutableT = tList;
