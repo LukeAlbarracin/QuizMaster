@@ -14,8 +14,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="573f40fd-845a-4e9a-a13e-111f92c9c5e0" name="Default Changelist" comment="ui draft">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/quizmaster/QuizTakerActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_quiz_taker.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/quizmaster/Plan.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/quizmaster/StartingMenu/RequestEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.bin" afterDir="false" />
@@ -24,27 +24,9 @@
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/gradle_models.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/gradle_models.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/quizmaster/BasicQuestionActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/quizmaster/QuestionActivities/BasicQuestionActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/quizmaster/BulletpointActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/quizmaster/QuestionActivities/BulletpointActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/quizmaster/InputReaderActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/quizmaster/QuestionActivities/InputReaderActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/quizmaster/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/quizmaster/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/quizmaster/MathQuestionActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/quizmaster/QuestionActivities/MathQuestionActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/quizmaster/OldQuizActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/quizmaster/StartingMenu/OldQuizActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/quizmaster/QuizMakerActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/quizmaster/StartingMenu/QuizMakerActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/quizmaster/SharedQuizActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/quizmaster/StartingMenu/SharedQuizActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_bulletpoint.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_bulletpoint.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_input_reader.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_input_reader.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_math_question.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_math_question.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_old_quiz.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_old_quiz.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_question_maker.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_basic_question.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_quiz_maker.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_quiz_maker.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_shared_quiz.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_shared_quiz.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/content_quiz_maker.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/content_quiz_maker.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/content_shared_quiz.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/content_shared_quiz.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/quizmaster/QuestionActivities/InputReaderActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/quizmaster/QuestionActivities/InputReaderActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/quizmaster/StartingMenu/QuizMakerActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/quizmaster/StartingMenu/QuizMakerActivity.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -65,15 +47,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/quizmaster/QuestionActivities/BasicQuestionActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="477">
-              <caret line="64" column="34" selection-start-line="64" selection-start-column="34" selection-end-line="64" selection-end-column="34" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_basic_question.xml">
           <provider editor-type-id="text-editor">
@@ -85,22 +58,13 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/quizmaster/MainActivity.java">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/quizmaster/QuestionActivities/BulletpointActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+            <state relative-caret-position="180">
+              <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/quizmaster/ButtonListener.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="26" lean-forward="true" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -114,14 +78,47 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/quizmaster/StartingMenu/QuizMakerActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="205">
-              <caret line="74" column="44" lean-forward="true" selection-start-line="74" selection-start-column="44" selection-end-line="74" selection-end-column="44" />
+            <state relative-caret-position="443">
+              <caret line="154" lean-forward="true" selection-start-line="154" selection-end-line="154" />
               <folding>
-                <element signature="e#1436#1450#0" expanded="true" />
-                <element signature="e#1507#1521#0" expanded="true" />
+                <element signature="e#1378#1392#0" expanded="true" />
+                <element signature="e#1449#1463#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/quizmaster/StartingMenu/RequestEntity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="39" column="38" lean-forward="true" selection-start-line="39" selection-start-column="38" selection-end-line="39" selection-end-column="38" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/quizmaster/Plan.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="6" column="101" selection-start-line="6" selection-start-column="101" selection-end-line="6" selection-end-column="101" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/quizmaster/QuestionActivities/MathQuestionActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -139,8 +136,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/quizmaster/QuestionActivities/InputReaderActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+            <state relative-caret-position="475">
+              <caret line="71" column="8" selection-start-line="71" selection-start-column="8" selection-end-line="71" selection-end-column="58" />
             </state>
           </provider>
         </entry>
@@ -148,18 +145,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_quiz_maker.xml">
           <provider editor-type-id="text-editor">
-            <state relative-caret-position="-148">
-              <caret line="21" column="38" lean-forward="true" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="38" />
-            </state>
-          </provider>
-          <provider selected="true" editor-type-id="android-designer2" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_quiz_maker.xml">
-          <provider editor-type-id="text-editor">
-            <state relative-caret-position="660">
-              <caret line="44" selection-start-line="44" selection-end-line="44" />
+            <state relative-caret-position="-343">
+              <caret line="10" column="4" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
             </state>
           </provider>
           <provider selected="true" editor-type-id="android-designer2" />
@@ -192,6 +179,7 @@
       <find>superQ</find>
       <find>Procedure</find>
       <find>immutable</find>
+      <find>text</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -231,15 +219,19 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/quizmaster/TermDefinitionSet.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/quizmaster/QuizTakerActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_quiz_taker.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_quiz_maker.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/quizmaster/StartingMenu/QuizMakerActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/quizmaster/QuestionActivities/BasicQuestionActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_quiz_maker.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/quizmaster/StartingMenu/QuizMakerDelegate.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/quizmaster/QuestionActivities/InputReaderActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/quizmaster/StartingMenu/QuizMakerActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/quizmaster/StartingMenu/RequestEntity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/quizmaster/Plan.txt" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="55" />
-    <option name="y" value="23" />
+    <option name="x" value="11" />
+    <option name="y" value="164" />
     <option name="width" value="1440" />
     <option name="height" value="839" />
   </component>
@@ -694,11 +686,11 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="4" y="23" width="1440" height="839" extended-state="6" />
+    <frame x="0" y="23" width="1440" height="839" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.23676682" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.23676682" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Build Variants" order="4" side_tool="true" />
@@ -713,7 +705,7 @@
       <window_info anchor="bottom" id="Terminal" order="4" weight="0.3276316" />
       <window_info anchor="bottom" id="Event Log" order="5" sideWeight="0.5007752" side_tool="true" weight="0.41973683" />
       <window_info anchor="bottom" id="Version Control" order="6" weight="0.32797858" />
-      <window_info anchor="bottom" id="Build" order="7" weight="0.26907632" />
+      <window_info active="true" anchor="bottom" id="Build" order="7" visible="true" weight="0.04016064" />
       <window_info anchor="bottom" id="Logcat" order="8" sideWeight="0.4992248" weight="0.90629184" />
       <window_info anchor="bottom" id="Android Profiler" order="9" weight="0.32891566" />
       <window_info anchor="bottom" id="Find" order="10" />
@@ -725,50 +717,12 @@
       <window_info anchor="right" id="Preview" order="4" weight="0.39478764" />
       <window_info anchor="right" id="Palette&#9;" order="5" />
     </layout>
-    <layout-to-restore>
-      <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.3404864" />
-      <window_info id="Structure" order="2" side_tool="true" />
-      <window_info id="Favorites" order="3" side_tool="true" />
-      <window_info id="Build Variants" order="4" side_tool="true" />
-      <window_info id="Image Layers" order="5" />
-      <window_info id="Designer" order="6" />
-      <window_info id="Resources Explorer" order="7" />
-      <window_info id="Capture Tool" order="8" />
-      <window_info anchor="bottom" id="CheckStyle" order="0" weight="0.3299363" />
-      <window_info anchor="bottom" id="Run" order="1" visible="true" weight="0.3381579" />
-      <window_info anchor="bottom" id="TODO" order="2" weight="0.32894737" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.17631578" />
-      <window_info anchor="bottom" id="Terminal" order="4" weight="0.3276316" />
-      <window_info anchor="bottom" id="Event Log" order="5" sideWeight="0.5007752" side_tool="true" weight="0.41973683" />
-      <window_info anchor="bottom" id="Version Control" order="6" weight="0.32894737" />
-      <window_info anchor="bottom" id="Build" order="7" weight="0.26973686" />
-      <window_info anchor="bottom" id="Logcat" order="8" sideWeight="0.4992248" weight="0.83947366" />
-      <window_info anchor="bottom" id="Android Profiler" order="9" weight="0.32891566" />
-      <window_info anchor="bottom" id="Find" order="10" />
-      <window_info anchor="bottom" id="Messages" order="11" />
-      <window_info anchor="right" id="Device File Explorer" order="0" side_tool="true" />
-      <window_info anchor="right" id="Capture Analysis" order="1" />
-      <window_info anchor="right" id="Gradle" order="2" />
-      <window_info anchor="right" id="Theme Preview" order="3" />
-      <window_info anchor="right" id="Preview" order="4" weight="0.39478764" />
-      <window_info anchor="right" id="Palette&#9;" order="5" />
-    </layout-to-restore>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="ui draft" />
     <option name="LAST_COMMIT_MESSAGE" value="ui draft" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/QuizMaster.iml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/settings.gradle">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -849,10 +803,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/quizmaster/UsersBase.java" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_old_quiz.xml">
-      <provider editor-type-id="text-editor" />
-      <provider selected="true" editor-type-id="android-designer2" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_math_question.xml">
       <provider editor-type-id="text-editor" />
       <provider selected="true" editor-type-id="android-designer2" />
@@ -889,26 +839,6 @@
       </provider>
       <provider editor-type-id="android-designer2" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/quizmaster/QuestionActivities/MathQuestionActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/quizmaster/QuestionActivities/BulletpointActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/quizmaster/StartingMenu/OldQuizActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="193">
@@ -934,33 +864,6 @@
       </provider>
       <provider selected="true" editor-type-id="android-designer2" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_quiz_taker.xml">
-      <provider editor-type-id="text-editor" />
-      <provider selected="true" editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_basic_question.xml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="8" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/quizmaster/QuestionActivities/InputReaderActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_quiz_maker.xml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="-148">
-          <caret line="21" column="38" lean-forward="true" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="38" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer2" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_quiz_maker.xml">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="660">
@@ -969,24 +872,18 @@
       </provider>
       <provider selected="true" editor-type-id="android-designer2" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_quiz_taker.xml">
+      <provider editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_old_quiz.xml">
+      <provider editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="android-designer2" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/quizmaster/ButtonListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
-          <caret line="3" column="26" lean-forward="true" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/quizmaster/StartingMenu/SharedQuizActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/quizmaster/QuizTakerActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="25" selection-start-line="25" selection-end-line="25" />
+          <caret line="3" column="26" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
         </state>
       </provider>
     </entry>
@@ -1000,21 +897,102 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/quizmaster/StartingMenu/QuizMakerActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/quizmaster/QuestionActivities/BasicQuestionActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="74" column="44" lean-forward="true" selection-start-line="74" selection-start-column="44" selection-end-line="74" selection-end-column="44" />
+        <state relative-caret-position="462">
+          <caret line="63" column="42" selection-start-line="63" selection-start-column="42" selection-end-line="63" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_basic_question.xml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="8" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/quizmaster/StartingMenu/QuizMakerDelegate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="1" lean-forward="true" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/quizmaster/QuestionActivities/BulletpointActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
           <folding>
-            <element signature="e#1436#1450#0" expanded="true" />
-            <element signature="e#1507#1521#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/quizmaster/QuestionActivities/BasicQuestionActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_quiz_maker.xml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="-343">
+          <caret line="10" column="4" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/quizmaster/QuizTakerActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="477">
-          <caret line="64" column="34" selection-start-line="64" selection-start-column="34" selection-end-line="64" selection-end-column="34" />
+        <state relative-caret-position="300">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/quizmaster/QuestionActivities/MathQuestionActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/quizmaster/QuestionActivities/InputReaderActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="71" column="8" selection-start-line="71" selection-start-column="8" selection-end-line="71" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/quizmaster/StartingMenu/SharedQuizActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/quizmaster/Plan.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="101" selection-start-line="6" selection-start-column="101" selection-end-line="6" selection-end-column="101" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/quizmaster/StartingMenu/RequestEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="39" column="38" lean-forward="true" selection-start-line="39" selection-start-column="38" selection-end-line="39" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/quizmaster/StartingMenu/QuizMakerActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="443">
+          <caret line="154" lean-forward="true" selection-start-line="154" selection-end-line="154" />
+          <folding>
+            <element signature="e#1378#1392#0" expanded="true" />
+            <element signature="e#1449#1463#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

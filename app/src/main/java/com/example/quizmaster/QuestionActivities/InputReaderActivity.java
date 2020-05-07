@@ -48,7 +48,7 @@ public class InputReaderActivity extends AppCompatActivity {
             ArrayList<CharSequence> tList = (getIntent().getCharSequenceArrayListExtra("backT") == null)
                     ? tList = new ArrayList<CharSequence>() : getIntent().getCharSequenceArrayListExtra("backT");
             String s = addParticularTokens(((TextView) findViewById(R.id.someText)).getText());
-            processRequest(s);
+            simpleVolleyRequest(s);
         });
         cancel.setOnClickListener((unused) -> {
             Intent intent = new Intent(this, QuizMakerActivity.class);
@@ -63,30 +63,22 @@ public class InputReaderActivity extends AppCompatActivity {
         });
     }
 
-    public String addParticularTokens(CharSequence s) {
+    private String addParticularTokens(CharSequence s) {
         return s.toString().trim().replace(" ", "%20");
     }
 
-    private void processRequest(String s) {
+    private void simpleVolleyRequest(String s) {
         final TextView textView = (TextView) findViewById(R.id.someText);
-        // Instantiate the RequestQueue.
         RequestQueue queue = Volley.newRequestQueue(this);
-
+        Context context = this;
         String url ="http://www.nla-cs125x-276023.uc.r.appspot.com/process/?input=" + addParticularTokens(s);
         //String url = "https://google.com";
-        // "http://192.168.4.31:8080/";
-        //String url = ""
-        Context context = this;
-        // Request a string response from the provided URL.
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        // Display the first 500 characters of the response string.
-                        Log.i("Y", "***There***");
                         textView.setText(response);
                         queue.stop();
-
                         Intent intent = new Intent(context, QuizMakerActivity.class);
                         ArrayList<CharSequence> qList = (getIntent().getCharSequenceArrayListExtra("backQ") == null)
                                 ? qList = new ArrayList<CharSequence>() : getIntent().getCharSequenceArrayListExtra("backQ");
@@ -102,29 +94,21 @@ public class InputReaderActivity extends AppCompatActivity {
                     }
                 }, new Response.ErrorListener() {
             @Override
-            public void onErrorResponse(VolleyError error) {
-                Log.i("Errorsss", "Hello Friend!");
-                textView.setText("Error: " + error);
-                error.printStackTrace();
+            public void onErrorResponse(VolleyError e) {
+                textView.setText("Error: " + e);
+                e.printStackTrace();
                 queue.stop();
             }});
         stringRequest.setRetryPolicy(new RetryPolicy() {
             @Override
-            public int getCurrentTimeout() {
-                return 20000;
-            }
-
+            public int getCurrentTimeout() { return 20000; }
             @Override
-            public int getCurrentRetryCount() {
-                return 40000;
-            }
-
+            public int getCurrentRetryCount() { return 40000; }
             @Override
-            public void retry(VolleyError error) throws VolleyError {}
-        });
-
-// Add the request to the RequestQueue.
+            public void retry(VolleyError error) throws VolleyError {}});
         queue.add(stringRequest);
     }
+
+
 
 }

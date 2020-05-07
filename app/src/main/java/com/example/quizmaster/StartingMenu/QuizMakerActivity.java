@@ -3,6 +3,10 @@ package com.example.quizmaster.StartingMenu;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.example.quizmaster.ButtonListener;
 import com.example.quizmaster.QuestionActivities.BasicQuestionActivity;
 import com.example.quizmaster.QuestionActivities.InputReaderActivity;
@@ -23,6 +27,8 @@ import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -40,7 +46,6 @@ public class QuizMakerActivity extends AppCompatActivity{
     @Override
     protected void onResume() {
         super.onResume();
-        LinearLayout text = findViewById(R.id.linLayout);
         ArrayList<CharSequence> qList = new ArrayList<CharSequence>();
         ArrayList<CharSequence> tList = new ArrayList<CharSequence>();
         if (getIntent().getCharSequenceArrayListExtra("qText") == null ||
@@ -51,28 +56,9 @@ public class QuizMakerActivity extends AppCompatActivity{
         qList = getIntent().getCharSequenceArrayListExtra("qText");
         tList = getIntent().getCharSequenceArrayListExtra("tText");
         displayButtons(qList, tList);
-        qList.forEach((q) -> {
-            TextView textBox = new TextView(this);
-            textBox.setText(q);
-            LinearLayout layout = (LinearLayout) findViewById(R.id.leftLayout);
-            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
-                    LinearLayout.LayoutParams.WRAP_CONTENT);
-            layout.addView(textBox, params);
-            textBox.setVisibility(View.VISIBLE);
-        });
-        tList.forEach((t) -> {
-            TextView textBox = new TextView(this);
-            textBox.setText(t);
-            LinearLayout layout = (LinearLayout) findViewById(R.id.rightLayout);
-            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
-                    LinearLayout.LayoutParams.WRAP_CONTENT);
-            textBox.setGravity(View.FOCUS_RIGHT);
-            layout.addView(textBox, params);
-            textBox.setVisibility(View.VISIBLE);
-        });
-        this.intent = new Intent(this, BasicQuestionActivity.class);
-        //Log.i("qStuff" , qList.toString());
-        //Log.i("tStuff", tList.toString());
+        qList.forEach((q) -> { addBoxesDynamically(R.id.leftLayout, q); });
+        tList.forEach((t) -> { addBoxesDynamically(R.id.rightLayout, t); });
+        intent = new Intent(this, BasicQuestionActivity.class);
         if (getIntent().getStringExtra("mode") != null &&
                 getIntent().getStringExtra("mode").equals("basic")) {
             intent.putExtra("backQ", qList);
@@ -136,5 +122,42 @@ public class QuizMakerActivity extends AppCompatActivity{
                 return super.onOptionsItemSelected(item);
         }
     }
+
+    private void addBoxesDynamically(final int sideLayout, final CharSequence text) {
+        TextView textBox = new TextView(this);
+        textBox.setText(text);
+        LinearLayout layout = (LinearLayout) findViewById(sideLayout);
+        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT);
+        layout.addView(textBox, params);
+        textBox.setVisibility(View.VISIBLE);
+    }
+
+    private void saveQuizToServer() {
+        String url = "http://my-json-feed";
+
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
+                (Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
+
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        //activity.findViewById(R.id.???)
+                        //textView.setText("Response: " + response.toString());
+                    }
+                }, new Response.ErrorListener() {
+
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        // TODO: Handle error
+
+                    }
+                });
+
+// Access the RequestQueue through your singleton class.
+        RequestEntity.getInstance().addToRequestQueue(jsonObjectRequest);
+    }
+
+
+
 
 }

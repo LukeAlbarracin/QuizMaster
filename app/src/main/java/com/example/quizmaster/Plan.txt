@@ -1,0 +1,7 @@
+What I need to add the application :
+- Request Handling Singleton
+- Make a simple JsonObjectRequest to the server
+- On the server side, handle request and add to the database
+- Also implement a way to send back the JsonObject (package it from database) to the client
+- Clean up code and test-driven development (maybe???)
+- Edit backend to handle all different forms of text, and alert the frontend if something is wrong...
