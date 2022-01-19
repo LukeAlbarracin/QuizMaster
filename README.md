@@ -1,2 +1,2 @@
 # QuizMaster
-Takes input and spits out intelligent questions
+A Quizlet inspired flashcard application which uses NLP to generate questions
