@@ -14,4 +14,5 @@ The frontend is implemented as an Android application in Java. It uses the [Voll
 ### Backend
 The backend uses the [Google Cloud Platform (GCP)](https://cloud.google.com/docs) and also uses [Spring Boot](https://spring.io/projects/spring-boot). More importantly, it uses the [Apache OpenNLP library](https://opennlp.apache.org/) to perform sentence analysis to send information back to the client.
 
-
+## References
+- [Guide to OpenNLP](https://www.baeldung.com/apache-open-nlp)
